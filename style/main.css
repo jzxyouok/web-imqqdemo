@@ -1,0 +1,207 @@
+html {
+  font-family: "微软雅黑";
+  background-color: #ccc;
+}
+
+p {
+  padding-top: 50px;
+}
+
+.warp {
+  width: 100%;
+  height: 500px;
+  min-width: 1024px;
+}
+
+.nav {
+  position: relative;
+  width: 100%;
+  height: 75px;
+  background-color: transparent;
+  z-index: 2;
+}
+
+#nav-left {
+  position: absolute;
+  width: 445px;
+  height: 75px;
+  right: 58%;
+}
+
+#nav-left img {
+  float: left;
+  margin: 15px 25px 0 14px;
+  cursor: pointer;
+}
+
+#nav-left a {
+  float: left;
+  display: block;
+  width: 76px;
+  height: 75px;
+  margin-left: 20px;
+  line-height: 75px;
+  font-size: 18px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.nav #nav-left .current {
+  background-color: #09b4f9;
+}
+
+#nav-left a:link,
+#nav-left a:visited {
+  color: #fff;
+}
+
+#nav-left a:hover,
+#nav-left a:active {
+  background-color: #09b4f9;
+}
+
+
+#nav-right {
+  position: absolute;
+  width: 320px;
+  height: 75px;
+  left: 66%;               /*与中线的距离*/
+}
+
+#nav-btn {
+  float: left;
+  width: 96px;
+  padding: 39px 0 0 0;    /*设置padding来显示a标签bg图片*/
+  margin: 18px 0 0 0;
+  background: url(../images/icons.png) no-repeat 0 -244px;
+}
+
+#nav-btn:hover {
+  background: url(../images/icons.png) no-repeat 0 -284px;
+}
+
+#nav-link {
+  padding-top: 18px;
+  height: 75px;
+}
+
+.nav-right-a {
+  float: right;
+  font-size: 14px;
+  line-height: 14px;       /*设置行高与字体大小一样,避免受到默认行高的影响*/
+  margin-bottom: 16px;
+  padding: 0 12px;
+  text-decoration: none;
+}
+
+.nav-right-a:link,
+.nav-right-a:visited {
+  color: #000;
+}
+
+.nav-right-a:hover,
+.nav-right-a:active {
+  color: #09b4f9;
+}
+
+#nav-online:hover {
+  text-decoration: underline; /*在线人数有点特别,鼠标悬浮时有下划线*/
+}
+
+/*透明导航条样式结束*/
+
+.nav-b {
+  position: fixed;
+  width: 100%;
+  height: 75px;
+  background-color: #fff;
+  display: none;
+}
+
+#nav-b-left {
+  position: absolute;
+  width: 445px;
+  height: 75px;
+  right: 58%;
+}
+
+#nav-b-left img {
+  float: left;
+  margin: 15px 25px 0 14px;
+  cursor: pointer;
+}
+
+#nav-b-left a {
+  float: left;
+  display: block;
+  width: 76px;
+  height: 75px;
+  margin-left: 20px;
+  line-height: 75px;
+  font-size: 18px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.nav-b #nav-b-left .current {
+  color: #09b4f9;
+}
+
+#nav-b-left a:link,
+#nav-b-left a:visited {
+  color: #000;
+}
+
+#nav-b-left a:hover,
+#nav-b-left a:active {
+  color: #09b4f9;
+}
+
+#nav-b-right {
+  position: absolute;
+  width: 320px;
+  height: 75px;
+  left: 66%;               /*与中线的距离*/
+}
+
+#nav-b-btn {
+  float: left;
+  width: 96px;
+  padding: 39px 0 0 0;    /*设置padding来显示a标签bg图片*/
+  margin: 18px 0 0 0;
+  background: url(../images/icons.png) no-repeat 0 -244px;
+}
+
+#nav-b-btn:hover {
+  background: url(../images/icons.png) no-repeat 0 -284px;
+}
+
+#nav-b-link {
+  padding-top: 18px;
+  height: 75px;
+}
+
+.nav-b-right-a {
+  float: right;
+  font-size: 14px;
+  line-height: 14px;       /*设置行高与字体大小一样,避免受到默认行高的影响*/
+  margin-bottom: 16px;
+  padding: 0 12px;
+  text-decoration: none;
+}
+
+.nav-b-right-a:link,
+.nav-b-right-a:visited {
+  color: #000;
+}
+
+.nav-b-right-a:hover,
+.nav-b-right-a:active {
+  color: #09b4f9;
+}
+
+#nav-b-online:hover {
+  text-decoration: underline; /*在线人数有点特别,鼠标悬浮时有下划线*/
+}
+
+/*固定导航条样式结束*/
