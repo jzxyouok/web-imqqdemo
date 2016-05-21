@@ -3,22 +3,20 @@ html {
   background-color: #ccc;
 }
 
-p {
-  padding-top: 50px;
-}
-
 .warp {
   width: 100%;
   height: 500px;
   min-width: 1024px;
 }
+/*全局配置结束*/
 
 .nav {
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 75px;
   background-color: transparent;
   z-index: 2;
+  /*display: none;*/
 }
 
 #nav-left {
@@ -96,7 +94,7 @@ p {
 
 .nav-right-a:link,
 .nav-right-a:visited {
-  color: #000;
+  color: #fff;
 }
 
 .nav-right-a:hover,
@@ -107,7 +105,6 @@ p {
 #nav-online:hover {
   text-decoration: underline; /*在线人数有点特别,鼠标悬浮时有下划线*/
 }
-
 /*透明导航条样式结束*/
 
 .nav-b {
@@ -115,6 +112,7 @@ p {
   width: 100%;
   height: 75px;
   background-color: #fff;
+  z-index: 2;
   display: none;
 }
 
@@ -203,5 +201,23 @@ p {
 #nav-b-online:hover {
   text-decoration: underline; /*在线人数有点特别,鼠标悬浮时有下划线*/
 }
-
 /*固定导航条样式结束*/
+
+.banner {
+  position: absolute;
+  width: 100%;
+  height: 560px;
+  /*background: url(../images/mb60-s.jpg) no-repeat top;*/
+  background: url(../images/im_pc_banner.jpg) no-repeat top;
+}
+/*首页焦点图结束*/
+
+.brand {
+  position: relative;
+  top: 560px;
+  width: 100%;
+  height: 280px;
+  background: url(../images/brand.png) no-repeat top;
+}
+/*焦点图下面的分隔条结束*/
+
