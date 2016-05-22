@@ -11,13 +11,15 @@
 
   <body>
     <div class="warp">
-
+      
       <nav class="nav">
         <div id="nav-left">
           <img src="images/imlogo.png" alt="imlogo">
-          <a href="#" class="current">首页</a>
-          <a href="#">下载</a>
-          <a href="#">动态</a>
+          <ul class="nav-ul">
+            <li class="current"><a href="#">首页</a></li>
+            <li><a href="#">下载</a></li>
+            <li><a href="#">动态</a></li>
+          </ul>
         </div>
         <div id="nav-right">
           <a href="#" id="nav-btn"></a>
@@ -48,16 +50,27 @@
         </div>
       </nav><!--固定导航条标签结束-->
       
-      <div class="banner"></div><!--焦点图结束-->
+      <div class="banner">
+        <li id="banner01"></li>
+        <li id="banner02"></li>
+      </div><!--焦点图结束-->
       
-      <div class="brand"></div>
+      <div class="brand"></div><!--焦点图下面分隔栏结束-->
       
       <div class="btn-txt">
-        <h2 class="btn-title"></h2>
+        <h2 id="btn-title01"></h2>
+        <h2 id="btn-title02"></h2>
         <a href="#" class="btn-download"></a>
       </div><!--焦点图文字信息和下载按钮结束-->
       
-    </div>
+      <div class="nav-dot">
+        <span class="nav-dot-on"></span>
+        <span></span>
+      </div>
+      
+    </div><!--全局包裹标签结束-->
+    <script src="js/jquery-1.11.0.js"></script>
+    <script src="js/script.js"></script>
   </body>
 
 </html>
