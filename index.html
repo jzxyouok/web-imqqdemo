@@ -16,7 +16,7 @@
         <div id="nav-left">
           <img src="images/imlogo.png" alt="imlogo">
           <ul class="nav-ul">
-            <li class="current"><a href="#">首页</a></li>
+            <li><a href="#" class="current">首页</a></li>
             <li><a href="#">下载</a></li>
             <li><a href="#">动态</a></li>
           </ul>
@@ -50,10 +50,18 @@
         </div>
       </nav><!--固定导航条标签结束-->
       
-      <div class="banner">
-        <li id="banner01"></li>
-        <li id="banner02"></li>
-      </div><!--焦点图结束-->
+      <div id="fixflash"></div>
+      <div class="banner-warp" style="height: 560px;">
+        <ul class="banner">
+          <li id="banner01"></li>
+          <li id="banner02"></li>
+        </ul>
+      </div>
+      <div class="nav-dot">
+        <span class="nav-dot-on"></span>
+        <span></span>
+      </div>
+      <!--焦点图结束-->
       
       <div class="brand"></div><!--焦点图下面分隔栏结束-->
       
@@ -63,10 +71,7 @@
         <a href="#" class="btn-download"></a>
       </div><!--焦点图文字信息和下载按钮结束-->
       
-      <div class="nav-dot">
-        <span class="nav-dot-on"></span>
-        <span></span>
-      </div>
+      
       
     </div><!--全局包裹标签结束-->
     <script src="js/jquery-1.11.0.js"></script>

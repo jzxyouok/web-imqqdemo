@@ -15,6 +15,7 @@ html {
   position: absolute;
   width: 100%;
   height: 75px;
+  min-width: 1050px;
   background-color: transparent;
   z-index: 3;
 }
@@ -28,7 +29,7 @@ html {
 
 #nav-left img {
   float: left;
-  margin: 15px 25px 0 14px;
+  margin: 15px 45px 0 14px;
   cursor: pointer;
 }
 
@@ -37,15 +38,17 @@ html {
   display: block;
   width: 76px;
   height: 75px;
-  margin-left: 20px;
+  padding: 0 10px;
   line-height: 75px;
   font-size: 18px;
   text-decoration: none;
   text-align: center;
-  cursor: pointer;
 }
 
 .nav-ul li a {
+  display: block;
+  width: 76px;
+  height: 75px;
   text-decoration: none;
 }
 
@@ -203,28 +206,39 @@ html {
 /*固定导航条样式结束*/
 
 .banner {
+  position: relative;
   width: 100%;
-  height: 560px;
+  height: 100%;
+  max-width: 1920px;
+  min-width: 1007px;
+  margin: 0 auto;
 }
 
 .banner li {
+  position: absolute;
   list-style-type: none;
+  left: 50%;
+  margin-left: -960px;
+  width: 1920px;
+  height: 100%;
+  z-index: -1;
 }
 
-#banner01 {
+.banner #banner01 {
   opacity: 1;
-  position: absolute;
-  width: 100%;
-  height: 560px;
-  background: url(../images/mb60-s.jpg) no-repeat top;
+  background: url(../images/mb60-s.jpg) no-repeat center top;
+  background-size: cover;
 }
-#banner02 {
+.banner #banner02 {
   opacity: 0;
-  position: absolute;
-  width: 100%;
-  height: 560px;
-  background: url(../images/im_pc_banner.jpg) no-repeat top;
+  background: url(../images/im_pc_banner.jpg) no-repeat center top;
+  background-size: cover;
 }
+
+#fixflash {
+  
+}
+
 /*首页焦点图结束*/
 
 #btn-title01 {
@@ -266,19 +280,18 @@ html {
 
 .brand {
   position: absolute;
-  top: 560px;
   width: 100%;
   height: 280px;
-  background: url(../images/brand.png) no-repeat top;
+  background: #fff url(../images/brand.png) no-repeat top;
 }
 /*焦点图下面的标语条结束*/
 
 .nav-dot {
-  position: absolute;
+  position: relative;
   left: 50%;
-  margin: 10px 0 0 -20px;
-  width: 50px;
-  top: 500px;  
+  width: 100%;
+  height: 52px;
+  margin-top: -52px;
   z-index: 1;
 }
 
