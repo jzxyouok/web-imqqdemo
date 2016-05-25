@@ -221,7 +221,6 @@ html {
   margin-left: -960px;
   width: 1920px;
   height: 100%;
-  z-index: -1;
 }
 
 .banner #banner01 {
@@ -234,46 +233,41 @@ html {
   background: url(../images/im_pc_banner.jpg) no-repeat center top;
   background-size: cover;
 }
-
-#fixflash {
-  
-}
-
 /*首页焦点图结束*/
 
-#btn-title01 {
-  opacity: 1;
+.banner #btn-title01 {
   position: absolute;
-  top: 85px;
-  left: 11%;
+  top: 15%;
+  right: 50%;
+  margin-right: 50px;
   width: 473px;
   height: 329px;
   background: url(../images/mbver636.png) no-repeat 30px 20px;
   z-index: 1;
 }
-#btn-title02 {
-  opacity: 0;
+.banner #btn-title02 {
   position: absolute;
-  top: 85px;
-  left: 11%;
+  top: 15%;
+  right: 50%;
+  margin-right: 50px;
   width: 473px;
   height: 329px;
   background: url(../images/pcver83.png) no-repeat top;
   z-index: 1;
 }
 
-.btn-download {
+.banner li a {
   position: absolute;
   top: 414px;
-  left: 11%;
+  right: 50%;
   width: 386px;
   height: 76px;
-  margin: 0 45.5px;
+  margin-right: 93.5px;
   background: url(../images/btn541b.png) no-repeat 0 0;
   z-index: 1;
 }
 
-.btn-download:hover {
+.banner li a:hover {
   background: url(../images/btn541b.png) no-repeat 0 -77px;
 }
 /*焦点图说明文本和按钮结束*/

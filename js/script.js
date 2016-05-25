@@ -1,5 +1,4 @@
 /* Todo
- * 1.鼠标滑入导航菜单再滑出，banner 不会停止轮换。
  * 
  * 2.把 title 和download 元素放置到与其相对应的 banner li 标签里，
  *   直接控制 banner li 的动画即可。压缩 jQuery 和 CSS 的代码量。
@@ -74,24 +73,18 @@ $(document).ready(function() {
     index++;
     if (index==maximg) {index=0;}
   } , 3000);
-  
 });
 
 //banner图片以及banner点的轮换效果
+
+
 function ShowjQueryFlash(i) {
   $(".banner > li").eq(i)
     .animate({opacity: 0},1000)
-    .css({"z-index": "-2"})
+    .css({"z-index": "0"})
     .siblings()
     .animate({opacity: 1},1000)
-    .css({"z-index": "-1"});
-    
-  $(".btn-txt > h2").eq(i)
-    .animate({opacity: 0},1000)
-    .css({"z-index": "-2"})
-    .siblings()
-    .animate({opacity: 1},1000)
-    .css({"z-index": "-1"});
+    .css({"z-index": "1"});
     
   $(".nav-dot > span").eq(i-1)
     .addClass("nav-dot-on")
