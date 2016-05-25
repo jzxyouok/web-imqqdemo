@@ -1,9 +1,8 @@
 /* Todo
  * 
- * 2.把 title 和download 元素放置到与其相对应的 banner li 标签里，
- *   直接控制 banner li 的动画即可。压缩 jQuery 和 CSS 的代码量。
- * 
- * 3.banner 按钮和标题1920分辨率下显示的问题，看是否能通过2方法解决。
+ * 1.实现背景图片随着滚动条滚动而微微移动的效果。
+ *   css 固定背景图片参考 background-attachment 属性
+ * 2.实现通过判断广告条位置显示白底的导航条。
  * 
  * 关于在1920分辨率下 banner 图片显示问题：
  * 是通过 jQuery 响应浏览器窗口尺寸，
@@ -12,7 +11,7 @@
  * 目前先以当前浏览器尺寸为主，写完大部分布局后再做1920分辨率的适配。
  */
 
-//页面加载执行开始
+//页面加载
 $(document).ready(function() {
   var index = 0;
   var maximg = 2;
@@ -33,7 +32,7 @@ $(document).ready(function() {
     }
   });
   
-  //鼠标悬停在banner点上的事件
+  //鼠标悬停在banner点上的动画效果
   $(".nav-dot > span").mouseover(function() {
     if ($(this).attr("class") != "nav-dot-on") {
       $(this).addClass("nav-dot-on").siblings().attr("class", "");
@@ -79,14 +78,14 @@ $(document).ready(function() {
 
 
 function ShowjQueryFlash(i) {
-  $(".banner > li").eq(i)
+$(".banner > li").eq(i)
     .animate({opacity: 0},1000)
     .css({"z-index": "0"})
     .siblings()
     .animate({opacity: 1},1000)
     .css({"z-index": "1"});
     
-  $(".nav-dot > span").eq(i-1)
+$(".nav-dot > span").eq(i-1)
     .addClass("nav-dot-on")
     .siblings()
     .attr("class", "");
