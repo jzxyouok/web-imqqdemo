@@ -1,13 +1,11 @@
 /* Todo
  * 
- * 1.实现背景图片随着滚动条滚动而微微移动的效果。
- *   css 固定背景图片参考 background-attachment 属性
- * 2.实现通过判断广告条位置显示白底的导航条。
+ * 1.完成qqcall元素和后续的图片以及其他工作。
  * 
  * 关于在1920分辨率下 banner 图片显示问题：
  * 是通过 jQuery 响应浏览器窗口尺寸，
  * 动态修改 banner-warp 元素的 height 值（固定的比例计算出结果），
- * 并切换显示适合当前屏幕浏览的 banner 图片，
+ * 并切换显示适合当前屏幕浏览的 banner 图片，包括其背景图片
  * 目前先以当前浏览器尺寸为主，写完大部分布局后再做1920分辨率的适配。
  */
 
@@ -74,9 +72,26 @@ $(document).ready(function() {
   } , 3000);
 });
 
+//滚动条事件
+$(window).scroll(function (){
+  
+  var scrollTop = $(window).scrollTop();
+  
+  //浏览器滚动到一定位置，显示新导航条
+  if(scrollTop > 700){
+      $(".nav-b").show();
+  } else {
+    $(".nav-b").hide();
+  }
+  
+  //响应滚动条来调整背景图片的位置
+  $(".bgimgs > div").css("background-position-y", scrollTop*0.03);
+  
+});
+
+
+
 //banner图片以及banner点的轮换效果
-
-
 function ShowjQueryFlash(i) {
 $(".banner > li").eq(i)
     .animate({opacity: 0},1000)
