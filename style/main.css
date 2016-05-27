@@ -1,5 +1,5 @@
 html {
-  font-family: "微软雅黑";
+  font-family: "Microsoft YaHei", "黑体";
   background-color: #ccc;
 }
 
@@ -332,4 +332,46 @@ html {
   width: 100%;
   height: 584px;
   background-color: #fff;
+}
+
+.callimg {
+  position: absolute;
+  right: 50%;
+  margin-right: -160px;
+  margin-top: -179px;
+  width: 664px;
+  height: 763px;
+  background: url(../images/pic1.png) no-repeat 0 0;
+}
+
+.txtwarp {
+  position: absolute;
+  width: 487px;
+  left: 50%;
+  top: 115px;
+  
+}
+
+.txtwarp h2 {
+  width: 100%;
+  height: 0;
+  padding-top: 135px;
+  overflow: hidden;
+  background: url(../images/qcall_txt.png) no-repeat 0 0;
+}
+
+.txtwarp p {
+  width: 100%;
+  margin-top: 12px;
+  line-height: 25px;
+  text-align: right;
+  font-size: 18px;
+  letter-spacing: .2em;
+  opacity: .6;
+}
+
+.txtwarp a:link,
+.txtwarp a:visited {
+  color: #12b7f5;
+  text-decoration: none;
 }
