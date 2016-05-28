@@ -1,6 +1,8 @@
 /* Todo
  * 
- * 1.照例完成后续两端背景图。
+ * 1.照例完成后续背景图。
+ * 2.完成页脚。
+ * 3.适配1920分辨率。
  * 
  * 关于在1920分辨率下 banner 图片显示问题：
  * 是通过 jQuery 响应浏览器窗口尺寸，
@@ -52,7 +54,7 @@ $(document).ready(function() {
   });
   
   //滑入banner停止动画，滑出开始动画
-  $(".banner").hover(function() {
+  $(".banner, .shadow").hover(function() {
     if (MyTime) {
       clearInterval(MyTime);
     }
@@ -63,6 +65,8 @@ $(document).ready(function() {
       if (index == maximg) {index = 0;}
     }, 3000);
   });
+  
+  
   
   //自动播放
   var MyTime = setInterval(function(){
@@ -85,11 +89,9 @@ $(window).scroll(function (){
   }
   
   //响应滚动条来调整背景图片的位置
-  $(".bgimgs > div").css("background-position-y", scrollTop*0.03);
+  $(".bgimgs > div").css("background-position-y", scrollTop*0.02);
   
 });
-
-
 
 //banner图片以及banner点的轮换效果
 function ShowjQueryFlash(i) {
