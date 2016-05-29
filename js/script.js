@@ -1,8 +1,9 @@
 /* Todo
  * 
- * 1.照例完成后续背景图。
- * 2.完成页脚。
+ * 1.完成页脚。
+ * 2.关于这个网页板块制作。
  * 3.适配1920分辨率。
+ * 4.适配 IE7 的雪碧图。
  * 
  * 关于在1920分辨率下 banner 图片显示问题：
  * 是通过 jQuery 响应浏览器窗口尺寸，
@@ -15,6 +16,7 @@
 $(document).ready(function() {
   var index = 0;
   var maximg = 2;
+  var showtime = 3000;
   
   //鼠标滑过导航条效果
   $(".nav-ul > li").hover(function (){
@@ -63,7 +65,7 @@ $(document).ready(function() {
       ShowjQueryFlash(index);
       index++;
       if (index == maximg) {index = 0;}
-    }, 3000);
+    }, showtime);
   });
   
   
@@ -73,7 +75,7 @@ $(document).ready(function() {
     ShowjQueryFlash(index);
     index++;
     if (index==maximg) {index=0;}
-  } , 3000);
+  } , showtime);
 });
 
 //滚动条事件
