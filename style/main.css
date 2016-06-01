@@ -1,13 +1,12 @@
 html {
   font-family: "Microsoft YaHei", "黑体";
-  background-color: #ccc;
 }
 
 .warp {
   position: relative;
   width: 100%;
   min-width: 1024px;
-  /*overflow: hidden;*/
+  overflow: hidden;
 }
 /*全局配置结束*/
 
@@ -115,6 +114,7 @@ html {
   position: fixed;
   width: 100%;
   height: 75px;
+  min-width: 1050px;
   background-color: #fff;
   z-index: 2;
 }
@@ -278,9 +278,10 @@ html {
   position: relative;
   width: 100px;
   height: 20px;
+  padding: 10px 0 0 10px;
   left: 50%;
-  margin-top: -52px;
-  margin-left: -20px;
+  bottom: 10px;
+  margin-left: -30px;
   z-index: 1;
 }
 
@@ -464,6 +465,7 @@ html {
 
 .txticon {
   position: absolute;
+  min-width: 570px;
   height: 150px;
   right: 50%;
   margin-right: -40px;
@@ -512,6 +514,11 @@ html {
 .qqmaps a:visited {
   color: #979797;
   text-decoration: none;
+}
+
+.platleft {
+  float: left;
+  width: 510px;
 }
 
 .platleft h3 {
@@ -567,4 +574,135 @@ html {
 
 .platleft a.qqpad:hover {
   background-position: center -93px;
+}
+/*页脚左侧结束*/
+
+.map li {
+  font-size: 12px;
+  line-height: 22px;
+}
+
+.map h3 {
+  height: 25px;
+  color: #666;
+  font-size: 14px;
+}
+
+.map li a:hover{
+  color: #d0cfd7;
+}
+
+.qqaq {
+  float: left;
+  text-align: left;
+  width: 185px;
+}
+
+.qqfk {
+  float: left;
+  text-align: left;
+  width: 175px;
+}
+
+.qqlink {
+  float: left;
+  text-align: left;
+}
+/*页脚右侧结束*/
+
+.copyright {
+  clear: both;
+  width: 960px;
+  height: 50px;
+  margin: auto;
+  padding-top: 16px;
+  line-height: 17px;
+  text-align: center;
+  color: #666;
+  font-size: 12px;
+}
+/*页脚结束*/
+
+.aboutweb {
+  position: absolute;
+  bottom: -460px;
+  width: 100%;
+  height: 500px;
+  background-color: #eee;
+  font-size: 16px;
+  z-index: 3;
+}
+
+.aboutweb > h3 {
+  background-color: #555;
+  text-align: center;
+  line-height: 40px;
+  color: #bbb;
+  font-size: 16px;
+  letter-spacing: 3px;
+  cursor: pointer;
+}
+
+.aboutweb > h3:hover {
+  background-color: #666;
+  opacity: 1;
+}
+
+.aboutweb > h3 div {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 50%;
+  margin-left: 60px;
+  top: 10px;
+  background: transparent url(../images/more01.png) no-repeat 0 0;
+  background-size: 20px 20px;
+}
+
+
+.abouttxt {
+  width: 960px;
+  height: 100%;
+  margin: auto;
+  padding-top: 10px;
+}
+
+.abouttxt > h3 {
+  text-align: center;
+  line-height: 40px;
+  font-weight: bold;
+}
+
+.abouttxt li {
+  line-height: 30px;
+}
+
+.abouttxt > a:link,
+.abouttxt > a:visited {
+  text-decoration: none;
+  color: #666;
+}
+.abouttxt > a:hover,
+.abouttxt > a:active {
+  text-decoration: underline;
+  color: #000;
+}
+
+#author {
+  float: right;
+}
+
+#author:link,
+#author:visited {
+  text-decoration: none;
+  color: #000;
+}
+#author:hover,
+#author:active {
+  text-decoration: underline;
+  color: #000;
+}
+
+.abouttxt > a {
+  float: left;
 }
