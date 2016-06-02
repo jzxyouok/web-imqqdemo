@@ -1,33 +1,24 @@
 /* Todo
  * 
  * 1.广告条txt下的几个小图片和字。
- * 
- * 2.3个icon跳出动画。
- * 
- * 关于这个网页板块制作:
- *   标题条平时为隐藏状态，当页面滚动到最底部时，以自下而上的效果显示标题条。
- *   页面滚动出时将标题条隐藏。
- *   标题后面加一个收起和展开的图标，点击展开从页面最下端向上滑动展开内容，
- *   此时展开图标变换为收起图标。
- *   点击收起图标内容向下滑动收回内容。
- *   除了点击内容外，点击页面其他区域也能向下回收内容。
  *   
- * 3.适配1920分辨率。
+ * 2.适配1920分辨率。
  *   关于在1920分辨率下 banner 图片显示问题：
  *   是通过 jQuery 响应浏览器窗口尺寸，
  *   动态修改 banner-warp 元素的 height 值（固定的比例计算出结果），
  *   并切换显示适合当前屏幕浏览的 banner 图片，包括其背景图片
  *   目前先以当前浏览器尺寸为主，写完大部分布局后再做1920分辨率的适配。
- * 
- * 4.适配 IE7 的雪碧图。IE的透明hack
  */
 
 //页面加载
 $(document).ready(function() {
   var index = 0;
   var maximg = 2;
-  var showtime = 3000;
+  var showtime = 3000; //焦点图切换延迟时间
+  var txtIcon = $(".txticon");
   
+  //默认三个icon为透明
+  $(txtIcon).css("opacity", "0");
   
   //鼠标滑过导航条效果
   $(".nav-ul > li").hover(function (){
@@ -91,12 +82,14 @@ $(document).ready(function() {
   var aboutWeb = $(".aboutweb");
   
   $(aboutH3).click(function (e){
-    if ($(this).parent().css("bottom") != "0px") {
-      $(this).parent().animate({bottom:'0px'},400);
-      $(this).children("div").css("background-image", "url(images/more02.png)");
-    } else {
-      $(this).parent().animate({bottom:'-460px'},400);
-      $(this).children("div").css("background-image", "url(images/more01.png)");
+    if(!$(aboutWeb).is(":animated")) { //如果元素当前不在动画才会执行以下代码，防止用户快速点击造成动画累积
+      if ($(this).parent().css("bottom") != "0px") {
+        $(this).parent().animate({bottom:'0px'},400);
+        $(this).children("div").css("background-image", "url(images/more02.png)");
+      } else {
+        $(this).parent().animate({bottom:'-460px'},400);
+        $(this).children("div").css("background-image", "url(images/more01.png)");
+      }
     }
     e.stopPropagation(); //每次触发事件都会阻止事件的冒泡
   });
@@ -106,8 +99,10 @@ $(document).ready(function() {
   });
   
   $(document).click(function (){
-    $(aboutH3).parent().animate({bottom:'-460px'},400);
-    $(aboutH3).children("div").css("background-image", "url(images/more01.png)");
+    if(!$(aboutWeb).is(":animated")){ //如果元素当前不在动画才会执行以下代码，防止用户快速点击造成动画累积
+      $(aboutH3).parent().animate({bottom:'-460px'},400);
+      $(aboutH3).children("div").css("background-image", "url(images/more01.png)");
+    }
   });
 });
 
@@ -118,9 +113,9 @@ $(window).scroll(function (){
   
   //浏览器滚动到一定位置，显示新导航条
   if(scrollTop > 700){
-    $(".nav-b").show();
+      $(".nav-b").show();
   } else {
-    $(".nav-b").hide();
+      $(".nav-b").hide();
   }
   
   //响应滚动条来调整背景图片的位置
@@ -128,22 +123,44 @@ $(window).scroll(function (){
   
   var sHeight = $(window).height();
   var docHeight = $(document).height();
+  var scrollTop = $(document).scrollTop();
+  var txtIcon = $(".txticon");
   var iosHeight = $(".txticon").offset().top;
   var h3Height = $(".aboutweb > h3").offset().top;
-  var scrollTop = $(window).scrollTop();
+  var aboutWeb = $(".aboutweb");
   
   
-  //三个icon跳出的动画  
-  //543px
+  //三个icon出现的动画  
+  if($(txtIcon).css("opacity") == "0"){
+    if (scrollTop >= (docHeight - sHeight)-600){
+      setTimeout(function (){
+        $(txtIcon).animate({opacity:"1"},300);
+      },100);
+    }
+  }
+  
+  if($(txtIcon).css("opacity") == "1"){
+    if (scrollTop < (docHeight - sHeight)-670){
+      $(txtIcon).stop();
+      $(txtIcon).css("opacity", "0");
+    }
+  }
   
   //底部关于条的出现动画
-  //627px
-  console.log(h3Height);
+  if($(aboutWeb).css("bottom") == "-500px"){
+    if (scrollTop >= (docHeight - sHeight) - 20){
+        $(aboutWeb).animate({bottom:"-460px"},300);
+    }
+  }
   
-  
+  if($(aboutWeb).css("bottom") != "0px"){
+    if (scrollTop <= (docHeight - sHeight) - 40){
+      $(aboutWeb).css("bottom", "-500px");
+    }
+  }
 });
 
-//banner图片以及banner点的轮换效果
+//banner图片以及导航点的轮换效果
 function ShowjQueryFlash(i) {
 $(".banner > li").eq(i)
     .animate({opacity: 0},1000)
@@ -157,4 +174,3 @@ $(".nav-dot > span").eq(i-1)
     .siblings()
     .attr("class", "");
 }
-
