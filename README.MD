@@ -1,4 +1,4 @@
-###仿imQQ（QQ软件官网）的网站  
+###仿imQQ（QQ手机版下载官网）的网站  
 [**点我跳转 Click me >>**](http://injonathan.GitHub.io/web-imQQdemo/)  
 ****
 **特点**  
