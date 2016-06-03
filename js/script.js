@@ -1,8 +1,9 @@
 /* Todo
  * 
- * 1.广告条txt下的几个小图片和字。
+ * 
+ * 2.兼容IE7、8,三icon黑边问题；处理透明度问题。
  *   
- * 2.适配1920分辨率。
+ * 3.适配1920分辨率。
  *   关于在1920分辨率下 banner 图片显示问题：
  *   是通过 jQuery 响应浏览器窗口尺寸，
  *   动态修改 banner-warp 元素的 height 值（固定的比例计算出结果），
@@ -16,6 +17,48 @@ $(document).ready(function() {
   var maximg = 2;
   var showtime = 3000; //焦点图切换延迟时间
   var txtIcon = $(".txticon");
+  
+
+//  if($.support.leadingWhitespace){
+//  alert("ie8以上")
+//}else {
+//  alert("ie8及以下")
+//}
+
+
+  //宽屏显示器兼容处理
+  $(window).resize(function() { //当浏览器尺寸发生变化时触发此事件
+    var sSize = 1890;           //宽屏阈值
+    var sWidth = $(document).width();
+    var bWarp = $(".banner-warp");
+    var dBtn = $(".btn-download");
+    var bTxt = $(".banner > li > h2");
+    var b01 = $("#banner01");
+    var b02 = $("#banner02");
+    var bgimg01 = $("#bgimg01");
+    var bgimg02 = $("#bgimg02");
+    var bgimg03 = $("#bgimg03");
+    
+    if(sWidth > sSize){
+      $(bWarp).css("height", sWidth*0.46);
+      $(bTxt).css("top", "220px");
+      $(dBtn).css("top", "550px");
+      $(b01).css("background", "url(images/mb60-b.jpg)");
+      $(b02).css("background", "url(images/im_pc_banner_b.jpg)");
+      $(bgimg01).css("background-image", "url(images/fisrtbg.jpg)");
+      $(bgimg02).css("background-image", "url(images/avd.jpg)");
+      $(bgimg03).css("background-image", "url(images/blog.jpg)");
+    }else {
+      $(bWarp).css("height", "560px");
+      $(bTxt).css("top", "15%")
+      $(dBtn).css("top", "414px");
+      $(b01).css("background", "url(images/mb60-s.jpg)");
+      $(b02).css("background", "url(images/im_pc_banner.jpg)");
+      $(bgimg01).css("background-image", "url(images/bg1_1600.jpg)")
+      $(bgimg02).css("background-image", "url(images/avds.jpg)")
+      $(bgimg03).css("background-image", "url(images/bg3_1600.jpg)")
+    }
+  });
   
   //默认三个icon为透明
   $(txtIcon).css("opacity", "0");
