@@ -1,14 +1,7 @@
 /* Todo
  * 
- * 
  * 2.兼容IE7、8,三icon黑边问题；处理透明度问题。
  *   
- * 3.适配1920分辨率。
- *   关于在1920分辨率下 banner 图片显示问题：
- *   是通过 jQuery 响应浏览器窗口尺寸，
- *   动态修改 banner-warp 元素的 height 值（固定的比例计算出结果），
- *   并切换显示适合当前屏幕浏览的 banner 图片，包括其背景图片
- *   目前先以当前浏览器尺寸为主，写完大部分布局后再做1920分辨率的适配。
  */
 
 //页面加载
@@ -18,14 +11,6 @@ $(document).ready(function() {
   var showtime = 3000; //焦点图切换延迟时间
   var txtIcon = $(".txticon");
   
-
-//  if($.support.leadingWhitespace){
-//  alert("ie8以上")
-//}else {
-//  alert("ie8及以下")
-//}
-
-
   //宽屏显示器兼容处理
   $(window).resize(function() { //当浏览器尺寸发生变化时触发此事件
     var sSize = 1890;           //宽屏阈值
@@ -59,9 +44,6 @@ $(document).ready(function() {
       $(bgimg03).css("background-image", "url(images/bg3_1600.jpg)")
     }
   });
-  
-  //默认三个icon为透明
-  $(txtIcon).css("opacity", "0");
   
   //鼠标滑过导航条效果
   $(".nav-ul > li").hover(function (){
@@ -149,6 +131,8 @@ $(document).ready(function() {
   });
 });
 
+/*****************************************/
+
 //滚动条事件
 $(window).scroll(function (){
   
@@ -174,11 +158,15 @@ $(window).scroll(function (){
   
   
   //三个icon出现的动画  
-  if($(txtIcon).css("opacity") == "0"){
-    if (scrollTop >= (docHeight - sHeight)-600){
-      setTimeout(function (){
-        $(txtIcon).animate({opacity:"1"},300);
-      },100);
+  if(!$.support.leadingWhitespace){  //对 IE8 的判断，不支持这个函数则是IE8及以下
+    $(txtIcon).css("opacity", "1"); 
+  }else{
+    if($(txtIcon).css("opacity") == "0"){
+      if (scrollTop >= (docHeight - sHeight)-600){
+        setTimeout(function (){
+          $(txtIcon).animate({opacity:"1"},300);
+        },100);
+      }
     }
   }
   
@@ -203,6 +191,9 @@ $(window).scroll(function (){
   }
 });
 
+/***************************************************/
+
+//全局空间
 //banner图片以及导航点的轮换效果
 function ShowjQueryFlash(i) {
 $(".banner > li").eq(i)

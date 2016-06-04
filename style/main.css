@@ -250,7 +250,6 @@ html {
   width: 473px;
   height: 329px;
   background: url(../images/mbver636.png) no-repeat 30px 20px;
-  z-index: 1;
 }
 .banner #btn-title02 {
   position: absolute;
@@ -260,7 +259,6 @@ html {
   width: 473px;
   height: 329px;
   background: url(../images/pcver83.png) no-repeat top;
-  z-index: 1;
 }
 
 .banner li a {
@@ -471,6 +469,7 @@ html {
 
 .txticon {
   position: absolute;
+  opacity: 0;
   min-width: 570px;
   height: 150px;
   right: 50%;
