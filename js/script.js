@@ -1,7 +1,5 @@
 /* Todo
  * 
- * 2.兼容IE7、8,三icon黑边问题；处理透明度问题。
- *   
  */
 
 //页面加载
@@ -110,10 +108,10 @@ $(document).ready(function() {
     if(!$(aboutWeb).is(":animated")) { //如果元素当前不在动画才会执行以下代码，防止用户快速点击造成动画累积
       if ($(this).parent().css("bottom") != "0px") {
         $(this).parent().animate({bottom:'0px'},400);
-        $(this).children("div").css("background-image", "url(images/more02.png)");
+        $(this).children("span").css("background-image", "url(images/more02.png)");
       } else {
         $(this).parent().animate({bottom:'-460px'},400);
-        $(this).children("div").css("background-image", "url(images/more01.png)");
+        $(this).children("span").css("background-image", "url(images/more01.png)");
       }
     }
     e.stopPropagation(); //每次触发事件都会阻止事件的冒泡
@@ -126,7 +124,7 @@ $(document).ready(function() {
   $(document).click(function (){
     if(!$(aboutWeb).is(":animated")){ //如果元素当前不在动画才会执行以下代码，防止用户快速点击造成动画累积
       $(aboutH3).parent().animate({bottom:'-460px'},400);
-      $(aboutH3).children("div").css("background-image", "url(images/more01.png)");
+      $(aboutH3).children("span").css("background-image", "url(images/more01.png)");
     }
   });
 });

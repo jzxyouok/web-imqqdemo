@@ -652,7 +652,7 @@ html {
   background-color: #666;
 }
 
-.aboutweb > h3 div {
+.aboutweb > h3 span {
   position: absolute;
   width: 20px;
   height: 20px;
