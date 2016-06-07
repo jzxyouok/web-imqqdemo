@@ -659,8 +659,7 @@ html {
   left: 50%;
   margin-left: 60px;
   top: 10px;
-  background: transparent url(../images/more01.png) no-repeat 0 0;
-  background-size: 20px 20px;
+  background: url(../images/more.png) no-repeat 0 1px;
 }
 
 
