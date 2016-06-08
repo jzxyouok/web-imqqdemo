@@ -1,5 +1,5 @@
 ###仿imQQ（QQ下载官网）的网站  
-[**点我跳转 Click me >>**](http://injonathan.GitHub.io/web-imQQdemo/)  
+[**点我跳转 Click me >>**](http://injonathan.GitHub.io/web-imqqdemo/)  
 ****
 **特点**  
 1.纯手写页面：除了使用 jQuery 框架外，未使用任何第三方框架，每一行代码都是纯手打。  
